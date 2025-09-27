@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="themeBtn">🌙</button>
+    </div>
+
+    <!-- Top Toolbar -->
+    <div class="toolbar">
+        <!-- Drawing Tools -->
+        <div class="tool-group">
+            <button id="pencilTool" class="tool active" title="Pencil">✏️</button>
+            <button id="eraserTool" class="tool" title="Eraser">🧽</button>
+            <button id="lineTool" class="tool" title="Line">📏</button>
+            <button id="rectangleTool" class="tool" title="Rectangle">⬜</button>
+            <button id="circleTool" class="tool" title="Circle">⭕</button>
+            <button id="arrowTool" class="tool" title="Arrow">➡️</button>
+            <button id="textTool" class="tool" title="Text">T</button>
+            <button id="stickyNoteTool" class="tool" title="Sticky Note">📝</button>
+        </div>
+
+        <!-- Color Picker -->
+        <div class="tool-group">
+            <input type="color" id="colorPicker" value="#000000">
+            <input type="range" id="brushSize" min="1" max="50" value="5">
+            <span id="brushSizeValue">5px</span>
+        </div>
+
+        <!-- Actions -->
+        <div class="tool-group">
+            <button id="undoBtn" title="Undo">↶</button>
+            <button id="redoBtn" title="Redo">↷</button>
+            <button id="clearBtn" title="Clear">🗑️</button>
+            <button id="saveBtn" title="Save">💾</button>
+            <button id="loadBtn" title="Load">📂</button>
+            <button id="zoomIn" title="Zoom In">➕</button>
+            <button id="zoomOut" title="Zoom Out">➖</button>
+            <button id="resetZoom" title="Reset Zoom">🔍</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Canvas Container -->
+        <div class="canvas-container">
+            <canvas id="mainCanvas"></canvas>
+            <!-- Cursors for multi-user simulation -->
+            <div id="cursorsContainer"></div>
+        </div>
+
+        <!-- Mini-map -->
+        <div class="mini-map">
+            <canvas id="miniMap"></canvas>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay">
+        <div>Loading Whiteboard...</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
